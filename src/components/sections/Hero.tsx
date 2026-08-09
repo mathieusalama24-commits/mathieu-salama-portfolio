@@ -1,12 +1,15 @@
+import { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { TerminalWindow } from "@/components/ui/TerminalWindow";
 import { profile, stackBadges } from "@/data/content";
 import { fadeInUp, revealOnMount, staggerContainer } from "@/lib/motion";
+import { DevisDrawer } from "./DevisDrawer";
 
 export function Hero() {
   const reducedMotion = useReducedMotion();
+  const [devisOpen, setDevisOpen] = useState(false);
 
   return (
     <section
@@ -116,6 +119,21 @@ export function Hero() {
               </div>
             </div>
           </TerminalWindow>
+
+          <Button
+            type="button"
+            className="mt-4 h-12 w-full rounded-lg px-6 text-base"
+            onClick={() => setDevisOpen(true)}
+          >
+            Demander un devis
+            <ArrowRight aria-hidden="true" />
+          </Button>
+
+          <DevisDrawer
+            open={devisOpen}
+            onClose={() => setDevisOpen(false)}
+            defaultTier={null}
+          />
         </motion.div>
       </div>
     </section>
