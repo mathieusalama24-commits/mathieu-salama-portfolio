@@ -59,7 +59,7 @@ export function Guarantees() {
               <motion.div
                 key={item.title}
                 variants={fadeInUp}
-                className="rounded-xl border border-border bg-card p-7"
+                className="rounded-xl border border-primary/30 bg-primary/5 p-7"
               >
                 <Icon className="size-5 text-primary" aria-hidden="true" />
                 <h3 className="mt-4 font-semibold text-foreground">{item.title}</h3>
