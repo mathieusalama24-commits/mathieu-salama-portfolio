@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Mail, Menu, Phone, Terminal } from "lucide-react";
+import { Mail, Menu, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { profile } from "@/data/content";
 import { cn } from "@/lib/utils";
@@ -65,10 +65,11 @@ export function Navbar() {
           className="flex items-center gap-2 font-mono text-sm font-semibold text-foreground"
           aria-label="Retour en haut de page"
         >
-          <Terminal className="size-4 text-primary" aria-hidden="true" />
-          <span>
-            <span className="text-primary">~/</span>mathieu-salama
-          </span>
+          <img
+            src="/logo.png"
+            alt="Logo Mathieu Salama"
+            className="h-8 w-auto"
+          />
         </a>
 
         <nav className="hidden items-center gap-1 sm:flex" aria-label="Navigation principale">
