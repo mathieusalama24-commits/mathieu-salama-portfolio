@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/*
+  Palette "terminal" — reprend le navy et le vert sauge de la carte de visite,
+  poussés vers un vrai esprit dev/tech : fond quasi noir façon IDE, accent
+  cyan-vert type curseur de terminal, monospace pour tous les éléments
+  d'interface (labels, badges, stack technique).
+*/
+
+:root {
+    --radius: 0.85rem;
+
+    --background: #0B0F14;
+    --foreground: #E6EDF3;
+
+    --card: #11161D;
+    --card-foreground: #E6EDF3;
+
+    --popover: #11161D;
+    --popover-foreground: #E6EDF3;
+
+    /* Vert-cyan terminal — CTA, liens, curseur */
+    --primary: #4FD1AE;
+    --primary-foreground: #06110D;
+
+    --secondary: #1A212B;
+    --secondary-foreground: #E6EDF3;
+
+    --accent: #4FD1AE;
+    --accent-foreground: #06110D;
+
+    --muted: #161C24;
+    --muted-foreground: #8B96A5;
+
+    --border: #232B36;
+    --input: #232B36;
+    --ring: #4FD1AE;
+
+    --destructive: #F87171;
+
+    /* Extensions propres à ce site */
+    --terminal-bar: #161C24;
+    --terminal-dot-red: #F87171;
+    --terminal-dot-yellow: #FBBF24;
+    --terminal-dot-green: #4FD1AE;
+}
+
+@theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+    --color-destructive: var(--destructive);
+    --color-terminal-bar: var(--terminal-bar);
+
+    --radius-sm: calc(var(--radius) * 0.5);
+    --radius-md: calc(var(--radius) * 0.75);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) * 1.4);
+    --radius-2xl: calc(var(--radius) * 1.9);
+
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', monospace;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply font-sans bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply tracking-tight;
+    font-weight: 700;
+  }
+}
