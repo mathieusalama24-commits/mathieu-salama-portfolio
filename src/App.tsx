@@ -3,6 +3,8 @@ import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { Projects } from "@/components/sections/Projects";
 import { Pricing } from "@/components/sections/Pricing";
+import { Guarantees } from "@/components/sections/Guarantees";
+import { Faq } from "@/components/sections/Faq";
 import { Stack } from "@/components/sections/Stack";
 import { Contact } from "@/components/sections/Contact";
 
@@ -20,6 +22,8 @@ export default function App() {
         <Hero />
         <Projects />
         <Pricing />
+        <Guarantees />
+        <Faq />
         <Stack />
         <Contact />
       </main>
