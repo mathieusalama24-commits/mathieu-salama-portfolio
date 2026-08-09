@@ -1,7 +1,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { Mail, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { profile, projects } from "@/data/content";
+import { profile } from "@/data/content";
 import { fadeInUp, reveal, staggerContainer } from "@/lib/motion";
 
 export function Contact() {
@@ -24,9 +24,9 @@ export function Contact() {
             variants={fadeInUp}
             className="mt-5 text-lg leading-relaxed text-muted-foreground"
           >
-            Comme pour les {projects.length} commerçants ci-dessus : je
-            regarde votre présence en ligne, je vous montre ce que ça
-            pourrait donner, vous décidez ensuite.
+            Comme pour les commerçants ci-dessus : je regarde votre présence
+            en ligne, je vous montre ce que ça pourrait donner, vous décidez
+            ensuite.
           </motion.p>
 
           <motion.div variants={fadeInUp} className="mt-9 flex flex-wrap justify-center gap-3">
@@ -37,9 +37,9 @@ export function Contact() {
               </a>
             </Button>
             <Button asChild variant="outline" className="h-12 rounded-lg px-6 text-base">
-              <a href="mailto:mathieusalama24@gmail.com">
+              <a href={`mailto:${profile.email}`}>
                 <Mail aria-hidden="true" />
-                mathieusalama24@gmail.com
+                {profile.email}
               </a>
             </Button>
           </motion.div>

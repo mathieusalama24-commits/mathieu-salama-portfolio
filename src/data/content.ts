@@ -3,6 +3,7 @@ export const profile = {
   tagline: "Création de sites web pour commerçants locaux",
   phone: "06 63 38 88 32",
   phoneHref: "tel:+33663388832",
+  email: "mathieusalama@hotmail.com",
   siren: "106 657 364",
   photo: "/images/mathieu-salama.jpg",
 } as const;

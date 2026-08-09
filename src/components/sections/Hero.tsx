@@ -2,7 +2,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { TerminalWindow } from "@/components/ui/TerminalWindow";
-import { profile, projects, stackBadges } from "@/data/content";
+import { profile, stackBadges } from "@/data/content";
 import { fadeInUp, revealOnMount, staggerContainer } from "@/lib/motion";
 
 export function Hero() {
@@ -46,7 +46,7 @@ export function Hero() {
             variants={fadeInUp}
             className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground"
           >
-            {profile.tagline}. {projects.length} sites déjà livrés — chaque
+            {profile.tagline}. Des dizaines de sites déjà créés — chaque
             démo est construite sur des données réelles et vérifiées, jamais
             inventées.
           </motion.p>
@@ -102,10 +102,10 @@ export function Hero() {
             <div className="mt-6 grid grid-cols-2 gap-3 border-t border-border pt-5">
               <div className="rounded-lg bg-secondary p-4">
                 <p className="font-mono text-2xl font-bold text-primary">
-                  {projects.length}
+                  Dizaines
                 </p>
                 <p className="mt-1 text-xs text-muted-foreground">
-                  sites livrés en production
+                  de sites livrés en production
                 </p>
               </div>
               <div className="rounded-lg bg-secondary p-4">

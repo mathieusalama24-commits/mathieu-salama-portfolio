@@ -20,7 +20,7 @@ export function Projects() {
             variants={fadeInUp}
             className="mt-3 text-3xl leading-tight font-extrabold text-foreground sm:text-4xl"
           >
-            {projects.length} commerçants, {projects.length} sites déployés
+            Des commerçants, des sites déployés
           </motion.h2>
           <motion.p
             variants={fadeInUp}
