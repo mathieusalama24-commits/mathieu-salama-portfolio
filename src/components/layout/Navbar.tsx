@@ -25,7 +25,8 @@ export function Navbar() {
   }, []);
 
   return (
-    <header
+    <>
+      <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         scrolled
@@ -102,7 +103,9 @@ export function Navbar() {
         </div>
       </div>
 
-      <MobileNav open={menuOpen} onClose={() => setMenuOpen(false)} items={nav} />
     </header>
+
+    <MobileNav open={menuOpen} onClose={() => setMenuOpen(false)} items={nav} />
+  </>
   );
 }
