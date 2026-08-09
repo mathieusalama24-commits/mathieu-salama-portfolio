@@ -1,10 +1,13 @@
+import { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import { projects } from "@/data/content";
+import { projects, type Project } from "@/data/content";
 import { fadeInUp, reveal, staggerContainer } from "@/lib/motion";
+import { ProjectDrawer } from "./ProjectDrawer";
 
 export function Projects() {
   const reducedMotion = useReducedMotion();
+  const [selected, setSelected] = useState<Project | null>(null);
 
   return (
     <section id="realisations" className="scroll-mt-20 py-20 sm:py-28">
@@ -28,6 +31,7 @@ export function Projects() {
           >
             Chaque site est construit sur des données vérifiées — adresse,
             horaires, avis, prestations — jamais sur un contenu générique.
+            Cliquez sur un projet pour le détail.
           </motion.p>
         </motion.div>
 
@@ -37,13 +41,12 @@ export function Projects() {
           className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
         >
           {projects.map((project) => (
-            <motion.a
+            <motion.button
               key={project.slug}
+              type="button"
               variants={fadeInUp}
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex flex-col overflow-hidden rounded-xl border border-border bg-card transition-colors hover:border-primary/50"
+              onClick={() => setSelected(project)}
+              className="group flex flex-col overflow-hidden rounded-xl border border-border bg-card text-left transition-colors hover:border-primary/50"
             >
               <div className="relative aspect-[16/10] overflow-hidden border-b border-border">
                 <img
@@ -80,10 +83,12 @@ export function Projects() {
                   ))}
                 </div>
               </div>
-            </motion.a>
+            </motion.button>
           ))}
         </motion.div>
       </div>
+
+      <ProjectDrawer project={selected} onClose={() => setSelected(null)} />
     </section>
   );
 }
