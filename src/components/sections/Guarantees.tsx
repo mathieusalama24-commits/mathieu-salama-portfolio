@@ -26,7 +26,7 @@ export function Guarantees() {
   return (
     <section
       id="engagements"
-      className="scroll-mt-20 border-y border-border bg-card/40 py-20 sm:py-28"
+      className="scroll-mt-20 sm:scroll-mt-28 border-y border-border bg-card/40 py-20 sm:py-28"
     >
       <div className="mx-auto max-w-6xl px-5">
         <motion.div variants={staggerContainer} {...reveal(reducedMotion)} className="max-w-2xl">

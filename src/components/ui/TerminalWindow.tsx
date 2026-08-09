@@ -5,9 +5,10 @@ type TerminalWindowProps = {
   title: string;
   children: ReactNode;
   className?: string;
+  bodyClassName?: string;
 };
 
-export function TerminalWindow({ title, children, className }: TerminalWindowProps) {
+export function TerminalWindow({ title, children, className, bodyClassName }: TerminalWindowProps) {
   return (
     <div className={cn("overflow-hidden rounded-xl border border-border bg-card", className)}>
       <div className="flex items-center gap-3 border-b border-border bg-terminal-bar px-4 py-2.5">
@@ -18,7 +19,7 @@ export function TerminalWindow({ title, children, className }: TerminalWindowPro
         </span>
         <span className="font-mono text-xs text-muted-foreground">{title}</span>
       </div>
-      <div className="p-5">{children}</div>
+      <div className={bodyClassName ?? "p-5"}>{children}</div>
     </div>
   );
 }

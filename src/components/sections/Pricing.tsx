@@ -1,16 +1,19 @@
+import { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, Check } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { profile, pricingTiers } from "@/data/content";
+import { pricingTiers } from "@/data/content";
 import { cn } from "@/lib/utils";
 import { fadeInUp, reveal, staggerContainer } from "@/lib/motion";
+import { DevisDrawer } from "./DevisDrawer";
 
 export function Pricing() {
   const reducedMotion = useReducedMotion();
+  const [devisTier, setDevisTier] = useState<string | null>(null);
 
   return (
-    <section id="tarifs" className="scroll-mt-20 border-y border-border bg-card/40 py-20 sm:py-28">
+    <section id="tarifs" className="scroll-mt-20 sm:scroll-mt-28 border-y border-border bg-card/40 py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-5">
         <motion.div variants={staggerContainer} {...reveal(reducedMotion)} className="max-w-2xl">
           <motion.p variants={fadeInUp} className="font-mono text-sm font-semibold text-primary">
@@ -77,19 +80,24 @@ export function Pricing() {
               </ul>
 
               <Button
-                asChild
+                type="button"
                 variant={tier.highlighted ? "default" : "outline"}
                 className="mt-7 h-12 w-full rounded-full text-base"
+                onClick={() => setDevisTier(tier.name)}
               >
-                <a href={profile.phoneHref}>
-                  Commander à {tier.price} €
-                  <ArrowRight aria-hidden="true" />
-                </a>
+                Demander un devis
+                <ArrowRight aria-hidden="true" />
               </Button>
             </motion.div>
           ))}
         </motion.div>
       </div>
+
+      <DevisDrawer
+        open={devisTier !== null}
+        onClose={() => setDevisTier(null)}
+        defaultTier={devisTier}
+      />
     </section>
   );
 }

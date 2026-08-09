@@ -10,7 +10,7 @@ export function Projects() {
   const [selected, setSelected] = useState<Project | null>(null);
 
   return (
-    <section id="realisations" className="scroll-mt-20 py-20 sm:py-28">
+    <section id="realisations" className="scroll-mt-20 sm:scroll-mt-28 py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-5">
         <motion.div variants={staggerContainer} {...reveal(reducedMotion)} className="max-w-2xl">
           <motion.p

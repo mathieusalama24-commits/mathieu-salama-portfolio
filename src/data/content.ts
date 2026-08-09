@@ -4,6 +4,8 @@ export const profile = {
   phone: "06 63 38 88 32",
   phoneHref: "tel:+33663388832",
   email: "mathieusalama@hotmail.com",
+  city: "Argenteuil, Val-d'Oise",
+  reach: "Toute la France (et à l'étranger), à distance",
   siren: "106 657 364",
   photo: "/images/mathieu-salama.jpg",
 } as const;
@@ -146,23 +148,23 @@ export type PricingTier = {
   one-shot le temps de construire une réputation, avant de proposer une
   maintenance annuelle facturée comme une agence installée).
 
-  Hébergement pris en charge sur les deux offres ; le nom de domaine reste
-  toujours à la charge du client (règle appliquée sur tous les sites livrés :
-  le client achète et possède son propre nom de domaine).
+  Hébergement + nom de domaine (1ʳᵉ année) pris en charge sur les deux offres
+  (décision du 2026-08-09) — le domaine reste enregistré au nom du client,
+  Mathieu couvre juste le coût de la première année.
 */
 export const pricingTiers: PricingTier[] = [
   {
     name: "Site Essentiel",
-    price: 229,
-    subtitle: "Paiement unique · Hébergement 1 an inclus",
+    price: 349,
+    subtitle: "Paiement unique · Hébergement + domaine inclus 12 mois",
     description:
-      "Un audit de votre présence en ligne existante avant la première ligne de code, puis un site construit sur vos vraies données — vos photos, vos avis, vos horaires. Jamais un template rempli au générateur de texte.",
+      "Un audit de votre présence en ligne existante avant la première ligne de code, puis une page unique construite sur vos vraies données — vos photos, vos avis, vos horaires. Jamais un template rempli au générateur de texte.",
     features: [
       "Audit de votre fiche Google et de vos avis avant la maquette",
-      "Site vitrine 5 pages sur mesure, vos vraies photos et avis",
+      "Site vitrine 1 page sur mesure, vos vraies photos et avis",
       "Design et palette propres à votre activité, pas un template recyclé",
       "Formulaire de contact fonctionnel",
-      "Hébergement 1 an inclus (hors nom de domaine)",
+      "Hébergement + nom de domaine inclus pendant 12 mois",
       "Modifications incluses pendant 1 an",
       "Support technique sous 24 h",
     ],
@@ -170,15 +172,16 @@ export const pricingTiers: PricingTier[] = [
   },
   {
     name: "Site Premium",
-    price: 399,
+    price: 599,
     subtitle:
-      "Paiement unique · Hébergement & maintenance 1 an inclus · Livraison 1 à 2 semaines",
+      "Paiement unique · Hébergement + domaine inclus 12 mois · Livraison 1 à 2 semaines",
     description:
-      "Tout l'Essentiel, avec plus de pages, plus de finition, et la partie technique poussée plus loin : données structurées pour le référencement local et headers de sécurité au niveau A+ (audité sur securityheaders.com) dès la mise en ligne.",
+      "Tout l'Essentiel, avec plusieurs pages pour détailler vos services et rassurer vos prospects, et la partie technique poussée plus loin : données structurées pour le référencement local et headers de sécurité au niveau A+ (audité sur securityheaders.com) dès la mise en ligne.",
     features: [
       "Tout ce qui est inclus dans l'offre Essentiel",
-      "Site jusqu'à 10 pages sur mesure",
+      "Site de 5 à 10 pages sur mesure",
       "Animations soignées, pensées pour votre activité",
+      "Hébergement + nom de domaine inclus pendant 12 mois",
       "Données structurées (Schema.org) pour le référencement local",
       "Headers de sécurité A+ audités (securityheaders.com)",
       "Formation utilisateur + support 3 mois",
@@ -192,14 +195,14 @@ export type FaqItem = { question: string; answer: string };
 
 export const faq: FaqItem[] = [
   {
-    question: "Pourquoi 229 € plutôt qu'un tarif d'agence classique ?",
+    question: "Pourquoi 349 € plutôt qu'un tarif d'agence classique ?",
     answer:
       "Je travaille seul, sans les frais de structure d'une agence, avec une méthode éprouvée sur des dizaines de sites déjà livrés à des commerçants locaux. Même niveau d'exigence, sans la marge d'intermédiaires.",
   },
   {
     question: "Quelle est la différence entre le Site Essentiel et le Site Premium ?",
     answer:
-      "L'Essentiel couvre les 5 pages qui font l'essentiel d'une présence en ligne solide. Le Premium va jusqu'à 10 pages, avec des animations soignées, des données structurées pour le référencement local, des headers de sécurité A+ audités, et le code source remis à la livraison.",
+      "L'Essentiel, c'est une page unique qui présente l'essentiel de votre activité. Le Premium va de 5 à 10 pages pour détailler vos services et rassurer vos prospects, avec des animations soignées, des données structurées pour le référencement local, des headers de sécurité A+ audités, et le code source remis à la livraison.",
   },
   {
     question: "Quels sont les délais de mise en ligne ?",
@@ -262,7 +265,7 @@ export const guarantees: Guarantee[] = [
     icon: "lock",
     title: "Hébergement & SSL inclus",
     description:
-      "Site sécurisé, sauvegardé et conforme RGPD. Aucune gestion technique à votre charge — hors nom de domaine, toujours à votre nom.",
+      "Site sécurisé, sauvegardé et conforme RGPD. Hébergement et nom de domaine inclus 12 mois, aucune gestion technique à votre charge — le domaine reste toujours enregistré à votre nom.",
   },
   {
     icon: "sparkles",

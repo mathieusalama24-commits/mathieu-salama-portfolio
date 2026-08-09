@@ -23,7 +23,7 @@ export function Hero() {
         }}
       />
 
-      <div className="relative mx-auto grid max-w-6xl gap-14 px-5 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+      <div className="relative mx-auto grid max-w-6xl gap-14 px-5 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
         <motion.div variants={staggerContainer} {...revealOnMount(reducedMotion)}>
           <motion.p
             variants={fadeInUp}
@@ -82,35 +82,35 @@ export function Hero() {
         </motion.div>
 
         <motion.div variants={fadeInUp} {...revealOnMount(reducedMotion)}>
-          <TerminalWindow title="mathieu@portfolio — profil.sh">
-            <div className="flex items-start gap-5">
+          <TerminalWindow title="mathieu@portfolio — profil.sh" bodyClassName="p-7">
+            <div className="flex items-start gap-6">
               <img
                 src={profile.photo}
                 alt={profile.name}
-                width={160}
-                height={160}
-                className="size-32 shrink-0 rounded-xl border border-border object-cover sm:size-40"
+                width={192}
+                height={192}
+                className="size-36 shrink-0 rounded-xl border border-border object-cover sm:size-48"
               />
-              <div className="min-w-0 font-mono text-sm leading-relaxed">
+              <div className="min-w-0 font-mono text-base leading-relaxed">
                 <p className="text-primary">$ whoami</p>
-                <p className="mt-1 text-foreground">{profile.name}</p>
-                <p className="mt-3 text-primary">$ cat metier.txt</p>
+                <p className="mt-1 text-lg text-foreground">{profile.name}</p>
+                <p className="mt-4 text-primary">$ cat metier.txt</p>
                 <p className="mt-1 text-muted-foreground">{profile.tagline}</p>
               </div>
             </div>
 
-            <div className="mt-6 grid grid-cols-2 gap-3 border-t border-border pt-5">
-              <div className="rounded-lg bg-secondary p-4">
-                <p className="font-mono text-2xl font-bold text-primary">
-                  Dizaines
+            <div className="mt-7 grid grid-cols-2 gap-4 border-t border-border pt-6">
+              <div className="rounded-lg bg-secondary p-5">
+                <p className="font-mono text-3xl font-bold text-primary">
+                  +10
                 </p>
-                <p className="mt-1 text-xs text-muted-foreground">
+                <p className="mt-1.5 text-sm text-muted-foreground">
                   de sites livrés en production
                 </p>
               </div>
-              <div className="rounded-lg bg-secondary p-4">
-                <p className="font-mono text-2xl font-bold text-primary">100%</p>
-                <p className="mt-1 text-xs text-muted-foreground">
+              <div className="rounded-lg bg-secondary p-5">
+                <p className="font-mono text-3xl font-bold text-primary">100%</p>
+                <p className="mt-1.5 text-sm text-muted-foreground">
                   données réelles, sourcées
                 </p>
               </div>

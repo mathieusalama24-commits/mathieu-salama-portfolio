@@ -7,7 +7,7 @@ export function Faq() {
   const reducedMotion = useReducedMotion();
 
   return (
-    <section id="faq" className="scroll-mt-20 py-20 sm:py-28">
+    <section id="faq" className="scroll-mt-20 sm:scroll-mt-28 py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-5">
         <motion.div
           variants={staggerContainer}

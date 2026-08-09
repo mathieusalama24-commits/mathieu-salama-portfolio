@@ -6,7 +6,7 @@ const lines = [
   { cmd: "frontend", value: "React 19, TypeScript, Vite" },
   { cmd: "style", value: "Tailwind CSS v4, shadcn/ui, Framer Motion" },
   { cmd: "3d", value: "Three.js, React Three Fiber (quand ça sert vraiment le site)" },
-  { cmd: "formulaires", value: "React Hook Form, Zod, Netlify Forms" },
+  { cmd: "formulaires", value: "Netlify Forms, validation native" },
   { cmd: "hébergement", value: "Netlify, headers de sécurité A+ sur securityheaders.com" },
   { cmd: "méthode", value: "audit des données réelles avant toute ligne de code" },
 ];
@@ -15,7 +15,7 @@ export function Stack() {
   const reducedMotion = useReducedMotion();
 
   return (
-    <section id="stack" className="scroll-mt-20 border-y border-border bg-card/40 py-20 sm:py-28">
+    <section id="stack" className="scroll-mt-20 sm:scroll-mt-28 border-y border-border bg-card/40 py-20 sm:py-28">
       <div className="mx-auto max-w-4xl px-5">
         <motion.div variants={staggerContainer} {...reveal(reducedMotion)}>
           <motion.p variants={fadeInUp} className="font-mono text-sm font-semibold text-primary">

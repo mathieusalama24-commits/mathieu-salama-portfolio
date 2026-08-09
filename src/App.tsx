@@ -21,10 +21,10 @@ export default function App() {
       <main id="main">
         <Hero />
         <Projects />
+        <Stack />
         <Pricing />
         <Guarantees />
         <Faq />
-        <Stack />
         <Contact />
       </main>
       <Footer />

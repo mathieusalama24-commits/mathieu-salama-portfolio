@@ -1,19 +1,21 @@
 import { useEffect, useState } from "react";
-import { Phone, Terminal } from "lucide-react";
+import { Mail, Menu, Phone, Terminal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { profile } from "@/data/content";
 import { cn } from "@/lib/utils";
+import { MobileNav } from "./MobileNav";
 
 const nav = [
-  { label: "Réalisations", href: "#realisations" },
+  { label: "Portfolio", href: "#realisations" },
+  { label: "Stack", href: "#stack" },
   { label: "Tarifs", href: "#tarifs" },
   { label: "FAQ", href: "#faq" },
-  { label: "Stack", href: "#stack" },
   { label: "Contact", href: "#contact" },
 ] as const;
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -31,6 +33,31 @@ export function Navbar() {
           : "border-b border-transparent",
       )}
     >
+      <div className="hidden border-b border-border bg-primary sm:block">
+        <div className="mx-auto flex h-9 max-w-6xl items-center justify-between px-5 font-mono text-xs font-semibold text-primary-foreground">
+          <span className="flex items-center gap-2">
+            <span className="size-1.5 animate-pulse rounded-full bg-primary-foreground" aria-hidden="true" />
+            disponible pour de nouveaux projets
+          </span>
+          <div className="flex items-center gap-5">
+            <a
+              href={profile.phoneHref}
+              className="flex items-center gap-1.5 transition-opacity hover:opacity-80"
+            >
+              <Phone className="size-3.5" aria-hidden="true" />
+              {profile.phone}
+            </a>
+            <a
+              href={`mailto:${profile.email}`}
+              className="flex items-center gap-1.5 transition-opacity hover:opacity-80"
+            >
+              <Mail className="size-3.5" aria-hidden="true" />
+              {profile.email}
+            </a>
+          </div>
+        </div>
+      </div>
+
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5">
         <a
           href="#top"
@@ -48,21 +75,34 @@ export function Navbar() {
             <a
               key={item.href}
               href={item.href}
-              className="rounded-lg px-3 py-2 font-mono text-sm text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+              className="rounded-lg px-3 py-2 font-mono text-sm font-bold tracking-wide text-primary uppercase transition-colors hover:bg-secondary"
             >
               {item.label}
             </a>
           ))}
         </nav>
 
-        <Button asChild size="sm" className="h-9 rounded-lg px-4 font-mono text-sm">
-          <a href={profile.phoneHref}>
-            <Phone aria-hidden="true" />
-            <span className="hidden sm:inline">{profile.phone}</span>
-            <span className="sm:hidden">Appeler</span>
-          </a>
-        </Button>
+        <div className="flex items-center gap-2">
+          <Button asChild size="sm" className="h-9 rounded-lg px-4 font-mono text-sm">
+            <a href={profile.phoneHref}>
+              <Phone aria-hidden="true" />
+              <span className="hidden sm:inline">{profile.phone}</span>
+              <span className="sm:hidden">Appeler</span>
+            </a>
+          </Button>
+
+          <button
+            type="button"
+            onClick={() => setMenuOpen(true)}
+            aria-label="Ouvrir le menu"
+            className="grid size-9 place-items-center rounded-lg border border-border text-foreground transition-colors hover:bg-secondary"
+          >
+            <Menu className="size-4" aria-hidden="true" />
+          </button>
+        </div>
       </div>
+
+      <MobileNav open={menuOpen} onClose={() => setMenuOpen(false)} items={nav} />
     </header>
   );
 }
