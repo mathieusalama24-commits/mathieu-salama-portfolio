@@ -95,10 +95,16 @@ export function Hero() {
                 className="size-36 shrink-0 rounded-xl border border-border object-cover sm:size-48"
               />
               <div className="min-w-0 font-mono text-base leading-relaxed">
-                <p className="text-primary">$ whoami</p>
+                <p className="text-primary">Qui suis-je ?</p>
                 <p className="mt-1 text-lg text-foreground">{profile.name}</p>
-                <p className="mt-4 text-primary">$ cat metier.txt</p>
-                <p className="mt-1 text-muted-foreground">{profile.tagline}</p>
+                <p className="mt-4 text-primary">Mon métier</p>
+                <p className="mt-1 text-muted-foreground">
+                  Développeur web indépendant
+                </p>
+                <p className="mt-4 text-primary">Ma spécialité</p>
+                <p className="mt-1 text-muted-foreground">
+                  {profile.tagline}
+                </p>
               </div>
             </div>
 
