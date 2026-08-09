@@ -155,7 +155,7 @@ export type PricingTier = {
 export const pricingTiers: PricingTier[] = [
   {
     name: "Site Essentiel",
-    price: 349,
+    price: 399,
     subtitle: "Paiement unique · Hébergement + domaine inclus 12 mois",
     description:
       "Un audit de votre présence en ligne existante avant la première ligne de code, puis une page unique construite sur vos vraies données — vos photos, vos avis, vos horaires. Jamais un template rempli au générateur de texte.",
@@ -195,7 +195,7 @@ export type FaqItem = { question: string; answer: string };
 
 export const faq: FaqItem[] = [
   {
-    question: "Pourquoi 349 € plutôt qu'un tarif d'agence classique ?",
+    question: "Pourquoi 399 € plutôt qu'un tarif d'agence classique ?",
     answer:
       "Je travaille seul, sans les frais de structure d'une agence, avec une méthode éprouvée sur des dizaines de sites déjà livrés à des commerçants locaux. Même niveau d'exigence, sans la marge d'intermédiaires.",
   },
