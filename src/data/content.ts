@@ -105,3 +105,50 @@ export const stackBadges = [
   "Vite",
   "Netlify",
 ] as const;
+
+export type PricingTier = {
+  name: string;
+  price: number;
+  subtitle: string;
+  description: string;
+  features: string[];
+  highlighted: boolean;
+};
+
+/* Structure et tarifs repris de la présentation d'une agence de référence
+   (ikuzo.fr), sur demande explicite — point de départ, à ajuster.
+   Deux offres seulement (pas de palier "Application Web"). */
+export const pricingTiers: PricingTier[] = [
+  {
+    name: "Site Essentiel",
+    price: 229,
+    subtitle: "Paiement unique · Hébergement & maintenance 1 an inclus",
+    description:
+      "Le site vitrine professionnel pour les TPE et indépendants qui souhaitent une présence en ligne performante sans contrainte d'abonnement.",
+    features: [
+      "Site vitrine 5 pages sur mesure",
+      "Design responsive haut de gamme",
+      "Hébergement + nom de domaine 1 an",
+      "Modifications incluses pendant 1 an",
+      "SEO local optimisé",
+      "Support technique sous 24 h",
+    ],
+    highlighted: false,
+  },
+  {
+    name: "Site Premium",
+    price: 399,
+    subtitle: "Paiement unique · Livraison 2/3 semaines · Propriété du code",
+    description:
+      "Le site premium sur mesure pour les entreprises exigeantes. Livré clé en main avec un niveau de finition supérieur.",
+    features: [
+      "Site jusqu'à 10 pages sur mesure",
+      "Design premium avec animations",
+      "SEO technique & on-page avancé",
+      "Connexion CRM / analytics",
+      "Formation utilisateur + support 3 mois",
+      "Code source remis à la livraison",
+    ],
+    highlighted: true,
+  },
+];

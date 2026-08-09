@@ -2,6 +2,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { Projects } from "@/components/sections/Projects";
+import { Pricing } from "@/components/sections/Pricing";
 import { Stack } from "@/components/sections/Stack";
 import { Contact } from "@/components/sections/Contact";
 
@@ -18,6 +19,7 @@ export default function App() {
       <main id="main">
         <Hero />
         <Projects />
+        <Pricing />
         <Stack />
         <Contact />
       </main>
