@@ -116,9 +116,12 @@ export type PricingTier = {
 };
 
 /*
-  Structure et tarifs inspirés de la présentation d'une agence de référence
-  (ikuzo.fr), sur demande explicite — point de départ, à ajuster.
-  Deux offres seulement (pas de palier "Application Web").
+  Structure visuelle (2 paliers, carte du milieu mise en avant) inspirée
+  d'une agence de référence — mais le contenu ci-dessous décrit le vrai
+  processus utilisé sur les 7 sites déjà livrés, pas une copie générique.
+  Pas d'offre récurrente pour l'instant (décision du 2026-08-09 : rester en
+  one-shot le temps de construire une réputation, avant de proposer une
+  maintenance annuelle facturée comme une agence installée).
 
   Hébergement pris en charge sur les deux offres ; le nom de domaine reste
   toujours à la charge du client (règle appliquée sur tous les sites livrés :
@@ -128,15 +131,16 @@ export const pricingTiers: PricingTier[] = [
   {
     name: "Site Essentiel",
     price: 229,
-    subtitle: "Paiement unique · Hébergement & maintenance 1 an inclus",
+    subtitle: "Paiement unique · Hébergement 1 an inclus",
     description:
-      "Le site vitrine professionnel pour les TPE et indépendants qui souhaitent une présence en ligne performante sans contrainte d'abonnement.",
+      "Un audit de votre présence en ligne existante avant la première ligne de code, puis un site construit sur vos vraies données — vos photos, vos avis, vos horaires. Jamais un template rempli au générateur de texte.",
     features: [
-      "Site vitrine 5 pages sur mesure",
-      "Design responsive haut de gamme",
+      "Audit de votre fiche Google et de vos avis avant la maquette",
+      "Site vitrine 5 pages sur mesure, vos vraies photos et avis",
+      "Design et palette propres à votre activité, pas un template recyclé",
+      "Formulaire de contact fonctionnel",
       "Hébergement 1 an inclus (hors nom de domaine)",
       "Modifications incluses pendant 1 an",
-      "SEO local optimisé",
       "Support technique sous 24 h",
     ],
     highlighted: false,
@@ -144,16 +148,16 @@ export const pricingTiers: PricingTier[] = [
   {
     name: "Site Premium",
     price: 399,
-    subtitle: "Paiement unique · Livraison 1 à 2 semaines · Propriété du code",
+    subtitle:
+      "Paiement unique · Hébergement & maintenance 1 an inclus · Livraison 1 à 2 semaines",
     description:
-      "Le site premium sur mesure pour les entreprises exigeantes. Livré clé en main avec un niveau de finition supérieur.",
+      "Tout l'Essentiel, avec plus de pages, plus de finition, et la partie technique poussée plus loin : données structurées pour le référencement local et headers de sécurité au niveau A+ (audité sur securityheaders.com) dès la mise en ligne.",
     features: [
+      "Tout ce qui est inclus dans l'offre Essentiel",
       "Site jusqu'à 10 pages sur mesure",
-      "Design premium avec animations",
-      "Hébergement 1 an inclus (hors nom de domaine)",
-      "Modifications incluses pendant 1 an",
-      "SEO technique & on-page avancé",
-      "Connexion CRM / analytics",
+      "Animations soignées, pensées pour votre activité",
+      "Données structurées (Schema.org) pour le référencement local",
+      "Headers de sécurité A+ audités (securityheaders.com)",
       "Formation utilisateur + support 3 mois",
       "Code source remis à la livraison",
     ],
@@ -172,7 +176,7 @@ export const faq: FaqItem[] = [
   {
     question: "Quelle est la différence entre le Site Essentiel et le Site Premium ?",
     answer:
-      "L'Essentiel couvre les 5 pages qui font l'essentiel d'une présence en ligne solide. Le Premium va jusqu'à 10 pages, avec des animations soignées, un SEO technique plus poussé, une connexion CRM/analytics et le code source remis à la livraison.",
+      "L'Essentiel couvre les 5 pages qui font l'essentiel d'une présence en ligne solide. Le Premium va jusqu'à 10 pages, avec des animations soignées, des données structurées pour le référencement local, des headers de sécurité A+ audités, et le code source remis à la livraison.",
   },
   {
     question: "Quels sont les délais de mise en ligne ?",

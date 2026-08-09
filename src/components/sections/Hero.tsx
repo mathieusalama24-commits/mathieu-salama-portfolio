@@ -87,9 +87,9 @@ export function Hero() {
               <img
                 src={profile.photo}
                 alt={profile.name}
-                width={112}
-                height={112}
-                className="size-24 shrink-0 rounded-xl border border-border object-cover sm:size-28"
+                width={160}
+                height={160}
+                className="size-32 shrink-0 rounded-xl border border-border object-cover sm:size-40"
               />
               <div className="min-w-0 font-mono text-sm leading-relaxed">
                 <p className="text-primary">$ whoami</p>
