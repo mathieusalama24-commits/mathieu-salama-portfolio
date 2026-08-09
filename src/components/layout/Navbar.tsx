@@ -68,7 +68,7 @@ export function Navbar() {
           <img
             src="/logo.png"
             alt="Logo Mathieu Salama"
-            className="h-12 w-auto"
+            className="h-16 w-auto"
           />
         </a>
 
